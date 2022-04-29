@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not a Rickroll</title>
+    <!-- Import w3 css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- add background.png as a background of body -->
+    <style>
+        body {
+            background-image: url("background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="w3-black">
+    <!-- Create a header with h3 and a subtlte "Welcome" "To not a Rickroll" -->
+    <header class="w3-container w3-center w3-padding-16 w3-amber w3-bottombar">
+        <h2>Welcome</h2>
+        <p>To not a Rickroll</p>
+    </header>
+    <!-- Create a container for the content Generated with Github Copilot) -->
+    <div class="w3-container">
+        <!-- Create a container for the content (Auto comment Generated with Github Copilot) -->
+        <div class="w3-container w3-center w3-padding-32">
+             <!-- create a big button that says "Play" and make it call a function when clicked -->
+            <button id="player" class="w3-button w3-green w3-round-large w3-large" onclick="play()">Play</button>
+
+            <script>
+                // create 2 variables, one for the link that'll be shared and one for the text to be displayed in the post
+                var link = "https://example.com/";
+                var text = "Check this cool site out!";
+
+
+                // create a variable for "Rick astley never going to give you up" embed code on YouTube
+                var rick = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+                // create a variable labeled title that will be used to display the title of the video
+                var title = "Rick Astley Never Going to Give You Up";
+                // create a variable for subtitle which says "I lied, enjoy!"
+                var subtitle = "I lied, enjoy!";
+                // create a function that'll be triggered when button "player" is clicked
+                function play() {
+                    // delete the button
+                    document.getElementById("player").remove();
+                    // create an iframe with the variable "rick" and set autoplay to on 
+                    // ignore this line - 1280x720 is the base resolution
+                    var iframe = "<iframe width='1280' height='720' src='" + rick +'?autoplay=1'+ "'</iframe>";
+                    // insert an h2 with title into content container[0]
+                    document.getElementsByClassName("w3-container")[0].innerHTML = "<h2>" + title + "</h2>";
+                    // insert an p with subtitle into content container[0] beneath header
+                    document.getElementsByClassName("w3-container")[0].innerHTML += "<p>" + subtitle + "</p>";
+                    // insert the iframe into content container[2]
+                    document.getElementsByClassName("w3-container")[2].innerHTML = iframe;
+                    // then wait for 30 seconds
+                    setTimeout(function() {
+                        // then delete the iframe
+                        document.getElementsByClassName("w3-container")[2].innerHTML = "";
+                        // insert an h2 with the label "Don't be a baby." into content container[0]
+                        document.getElementsByClassName("w3-container")[0].innerHTML = "<h2>Don't be a baby.</h2>";
+                        // insert a p with the label "it happened to plenty of people!" and make that a hyperlink to https://youtu.be/U9Gxcmvb2c4 and paste into content container[0] beneath header
+                        document.getElementsByClassName("w3-container")[0].innerHTML += "<p><a href='https://youtu.be/U9Gxcmvb2c4'>It happened to plenty of people!</a></p>";
+                        // add buttons that reads "Share to Social Media to get Revenge!" into content container[2] when clicked, run a function called share
+                        document.getElementsByClassName("w3-container")[2].innerHTML = "<button class='w3-button w3-green w3-round-large w3-large' onclick='share()'>Share to Social Media to get Revenge!</button>";
+                    }, 30000);
+                }
+                // create a function that'll be triggered when button "share" is clicked
+                function share() {
+                    // write 3 buttons for "Share on Facebook", "Share on Twitter", "Share on Reddit", "Send an Email" call a function on clicked.
+                    document.getElementsByClassName("w3-container")[2].innerHTML = "<button class='w3-button w3-green w3-round-large w3-large w3-margin' onclick='facebook()'>Share on Facebook</button><button class='w3-button w3-green w3-round-large w3-large w3-margin' onclick='twitter()'>Share on Twitter</button><button class='w3-button w3-green w3-round-large w3-large w3-margin' onclick='reddit()'>Share on Reddit</button><button class='w3-button w3-green w3-round-large w3-large w3-margin' onclick='email()'>Send an Email</button>";
+                }
+
+                // create a function that'll be triggered when button "facebook" is clicked
+                function facebook() {
+                    // open link to a new post on Facebook with the variable "link" and the variable "text"
+                    window.open("https://www.facebook.com/sharer/sharer.php?u=" + link + "&t=" + text);
+                    // trigger a function called "shared"
+                    shared();
+                }
+
+                // create a function that'll be triggered when button "twitter" is clicked
+                function twitter() {
+                    // open link to a new post on Twitter with the variable "link" and the variable "text"
+                    window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + link);
+                    // trigger a function called "shared"
+                    shared();
+                }
+
+                // create a function that'll be triggered when button "reddit" is clicked
+                function reddit() {
+                    // open link to a new post on Reddit with the variable "link" and the variable "text"
+                    window.open("https://www.reddit.com/submit?url=" + link + "&title=" + text);
+                    // trigger a function called "shared"
+                    shared();
+                }
+
+                // create a function that'll be triggered when button "email" is clicked
+                function email() {
+                    // open link to a new post on Email with the variable "link" and the variable "text"
+                    window.open("mailto:?subject=" + text + "&body=" + link);
+                    // trigger a function called "shared"
+                    shared();
+                }
+
+                // when shared is called
+                function shared() {
+                    // delete the share links
+                    document.getElementsByClassName("w3-container")[2].innerHTML = "";
+                    // insert a paragraph that says "Thanks for sharing!" and add a new line, then add "Here are some Puppies." add a hyperlink for a video of puppies and paste it into content container[2]
+                    document.getElementsByClassName("w3-container")[2].innerHTML = "<p>Thanks for sharing!<br><a href='https://youtu.be/ovoEhMov4vI'>Here are some Puppies for you to enjoy.</a></p>";
+                    // end function
+                }
+            </script>
+        </div>
+    </div>
+    <div class="w3-container w3-teal w3-center w3-bottom w3-topbar">
+        <p>
+            Made with <a href="https://copilot.github.com/">Github Copilot</a>
+            CSS Made with <a href="https://www.w3schools.com/w3css/">W3.CSS</a>
+            Idea by <a href="https://timewisely.net">TimeWisely</a>,
+            <a href="https://www.reddit.com/r/aprilfools/comments/mhns4a/i_made_a_blank_rick_roll_background_for_you_zoom/?utm_source=share&utm_medium=web2x&context=3">Background by Reddit User u/Rhodochrom,</a>
+        </p>
+    </div>
+</body>
+</html>
